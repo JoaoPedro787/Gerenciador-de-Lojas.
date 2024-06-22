@@ -1,16 +1,27 @@
-from terminal import tela_inicio,tela_login,tela_cadastro
+from terminal import tela_inicio, tela_login, tela_cadastro
+from utils import limpar
 
 def main():
-    tela_inicio()
-    
-    escolha=input('Digite uma opção: ')
-    
-    if escolha=='1':
-        if tela_login():
+    while True:
+        limpar()
+        tela_inicio()
+        
+        escolha = input('Digite uma opção: ')
+        
+        if escolha == '1':
+            limpar()
+            tela_login()
+            input('Pressione enter para continuar...')
+                
+        elif escolha == '2':
+            limpar()
             tela_cadastro()
-            
-    elif escolha=='2':
-        tela_cadastro()
+            input('Pressione enter para continuar...')
+        
+        elif escolha == '3':
+            limpar()
+            input('Pressione enter para continuar...')
+            exit()
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
