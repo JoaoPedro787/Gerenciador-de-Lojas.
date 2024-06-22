@@ -42,3 +42,4 @@ class Admin:
     
     def adicionar_usuario_na_loja(self, usuario, loja):
         loja.adicionar_usuario(usuario)
+        
