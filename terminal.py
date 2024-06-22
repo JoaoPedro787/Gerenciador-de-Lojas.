@@ -1,5 +1,5 @@
-from user import Usuario
-from utils import dump_json, verificar_cadastro, verificar_login
+from user import Usuario,Admin
+from utils import dump_json, verificar_cadastro, verificar_login,limpar
 
 def tela_inicio():
     print('[1] Login')
@@ -11,10 +11,12 @@ def tela_login():
     senha = input('Digite a senha: ')
     
     # Verifica as credenciais de login
-    login = verificar_login(nome, senha)
+    login=verificar_login(nome, senha)
     
-    if login:
-        pass
+    if login is None:
+        limpar()
+        tela_cadastrar_loja()
+    
     
 def tela_cadastro():
     nome = input('Digite o nome: ')
@@ -41,4 +43,10 @@ def tela_cadastro():
     print('Usuário cadastrado com sucesso')
     
 def tela_cadastrar_loja():
+    nome_loja = input('Digite o nome da loja: ')
+    Admin.cadastrar_loja(nome_loja)
+    return
+
+
+def tela_cadastrar_user():
     pass

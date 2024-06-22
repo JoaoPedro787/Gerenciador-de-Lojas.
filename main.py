@@ -19,9 +19,11 @@ def main():
             input('Pressione enter para continuar...')
         
         elif escolha == '3':
-            limpar()
-            input('Pressione enter para continuar...')
             exit()
+        
+        else:
+            print('Opção inválida')
+            input('Pressione enter para continuar...')
 
 if __name__ == '__main__':
     main()

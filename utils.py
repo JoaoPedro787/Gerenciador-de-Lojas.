@@ -4,6 +4,7 @@ from os import path, system
 
 json_path = Path(r'users.json')
 
+# Funções de Utilidade Geral
 def limpar():
     return system('cls')
 
@@ -30,6 +31,9 @@ def transacao_quantidade(produtos, produto, qtd, op):
             return True
     return False
 
+
+
+# Funções para Manipulação de Arquivo JSON
 def verificar_arquivo_json():
     # Verifica se o arquivo JSON existe e o cria se não existir
     if not path.exists(json_path):
@@ -55,9 +59,12 @@ def dump_json(dados):
     with open_json('w') as file:
         json.dump(dados, file, indent=4, ensure_ascii=False)
 
+
+
+# Funções Específicas de Verificação e Manipulação de Dados
 def verificar_login(nome, senha):
     if nome == 'admin' and senha == 'admin':
-        return True
+        return None
     
     dados = load_json()
     
