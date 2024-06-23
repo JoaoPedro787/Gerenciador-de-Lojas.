@@ -1,4 +1,4 @@
-from terminal import tela_inicio, tela_login, tela_cadastro
+from terminal import tela_inicio, tela_login,tela_admin
 from utils import limpar
 
 def main():
@@ -14,16 +14,16 @@ def main():
             input('Pressione enter para continuar...')
                 
         elif escolha == '2':
-            limpar()
-            tela_cadastro()
-            input('Pressione enter para continuar...')
-        
-        elif escolha == '3':
             exit()
         
+        elif escolha.lower() == 'admin':
+            limpar()
+            tela_admin()
+        
         else:
-            print('Opção inválida')
+            print('Opção incorreta')
             input('Pressione enter para continuar...')
+            
 
 if __name__ == '__main__':
     main()

@@ -63,9 +63,7 @@ def dump_json(dados):
 
 # Funções Específicas de Verificação e Manipulação de Dados
 def verificar_login(nome, senha):
-    if nome == 'admin' and senha == 'admin':
-        return None
-    
+
     dados = load_json()
     
     if not dados:

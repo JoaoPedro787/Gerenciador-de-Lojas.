@@ -1,5 +1,4 @@
 from utils import add_item_lista, remove_item_lista
-from loja import Loja
 
 class Usuario:
     
@@ -24,22 +23,3 @@ class Usuario:
         if loja in self.lojas:
             # Chama o método de venda de produto na loja
             loja.venda_produto(produto, qtd)
-
-class Admin:
-    lojas=[]
-
-    @classmethod
-    def cadastrar_loja(cls,nome_loja):
-        
-        if nome_loja not in (loja.nome for loja in cls.lojas):
-            nova_loja = Loja(nome_loja)
-            add_item_lista(cls.lojas,nova_loja)
-            print('Loja cadastrada')
-            
-        else:
-            print('Loja já cadastrada')
-            return False
-    
-    def adicionar_usuario_na_loja(self, usuario, loja):
-        loja.adicionar_usuario(usuario)
-        
