@@ -1,24 +1,19 @@
-from terminal import tela_inicio, tela_login,tela_admin
-from utils import limpar
+from menu import menu_inicio, menu_login,menu_admin
 
 def main():
     while True:
-        limpar()
-        tela_inicio()
+        menu_inicio()
         
         escolha = input('Digite uma opção: ')
         
         if escolha == '1':
-            limpar()
-            tela_login()
-            input('Pressione enter para continuar...')
+            menu_login()
                 
         elif escolha == '2':
             exit()
         
         elif escolha.lower() == 'admin':
-            limpar()
-            tela_admin()
+            menu_admin()
         
         else:
             print('Opção incorreta')

@@ -4,6 +4,27 @@ from os import path, system
 
 json_path = Path(r'users.json')
 
+# Função para criação de menus, comum no arquivo menu.py
+def menu_base(titulo, opcoes):
+    while True:
+        limpar()
+        print(titulo)
+        for c, linhas in enumerate(opcoes, start=1):
+            print(f'[{c}] {linhas[0]}')
+                
+        escolha = input('Escolha uma opção: ')
+        
+        if escolha.isdigit() and 1 <= int(escolha) <= len(opcoes):
+            if opcoes[int(escolha)-1][1] is None:
+                break
+            else:
+                opcoes[int(escolha)-1][1]()
+        else:
+            print('Valor inválido')
+            input('Pressione enter para continuar...')
+
+
+
 # Funções de Utilidade Geral
 def limpar():
     return system('cls')
@@ -72,7 +93,6 @@ def verificar_login(nome, senha):
     
     for linha in dados:
         if linha['nome'] == nome and linha['senha'] == senha:
-            print('Logando...')
             return True
     
     print('Credenciais incorretas')
@@ -88,6 +108,7 @@ def verificar_cadastro(nome):
     for linha in dados:
         if linha['nome'] == nome:
             print('Usuário já cadastrado')
+            input('Pressione enter para continuar...')
             return False
 
     # Retorna a lista de usuários cadastrados

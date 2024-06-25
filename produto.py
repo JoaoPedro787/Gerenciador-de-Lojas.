@@ -1,10 +1,5 @@
-class Categoria:
-    def __init__(self, nome, descricao):
-        self.nome = nome
-        self.descricao = descricao
-
 class Produto:
-    def __init__(self, nome, categoria):
+    def __init__(self, nome, valor):
         self.nome = nome
-        self.categoria = categoria
+        self.categoria = valor
         self.quantidade = 0
